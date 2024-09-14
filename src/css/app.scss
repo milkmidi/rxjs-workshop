@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+.rxjs-viz-container {
+  @apply space-y-6 p-3;
+  border: 2px solid black;
+  border-radius: 12px;
+  margin: 24px 0;
+  margin-bottom: 300px;
+}
+.rxjs-source {
+  @apply sticky top-0 z-50 bg-white space-y-4;
+  --section-color: #16a085;
+  padding-top: 50px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}

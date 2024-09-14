@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- https://stackblitz.com/edit/rxjs-horizontal-scroll-indicator?file=index.ts -->
+
+    <style>
+      #indication {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        z-index: 2;
+        background-color: #ff3366;
+        width: 5px;
+        height: 7px;
+        transition: width 0.5s;
+      }
+    </style>
+
+    <div id="indication">&nbsp;</div>
+    Scroll down!!!
+    <div class="app" style="position: absolute; margin-top: 3000px">Boom!</div>
+
+    <script type="module" src="./horizontal-scroll-indicator.ts"></script>
+  </body>
+</html>

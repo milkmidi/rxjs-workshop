@@ -1,0 +1,23 @@
+
+.collection {
+  @apply space-y-5 flex flex-col justify-center items-center;
+  section {
+    padding: 50px 0px 4px;
+    @apply space-y-1;
+  }
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  background-color:black;
+  display: block;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 60px !important;
+  border-radius: 8px;
+}
+.item {
+  border: 1px solid #00000044;
+  border-radius: 16px;
+}

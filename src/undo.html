@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <link rel="stylesheet" href="../css/style.scss" />
+  </head>
+  <body>
+    <!-- https://rx.js.cool/mixin/undo -->
+    <div class="app">
+
+      <h1>Very, very simple "undo"</h1>
+
+      <p>Click the buttons below to increment the value</p>
+      <button class="my-btn" id="add1">+ 1</button>
+      <button class="my-btn" id="add2">+ 2</button>
+
+      <p>Click this button to "undo" previous changes to the value</p>
+      <button class="my-btn" id="undo">Undo</button>
+
+      <p>Click this button to "redo" previous changes to the value</p>
+      <button class="my-btn" id="redo">Redo</button>
+
+      <p>Value:</p>
+      <output style="font-size: 3rem"></output>
+    </div>
+    <script type="module" src="./undo.ts"></script>
+  </body>
+</html>
