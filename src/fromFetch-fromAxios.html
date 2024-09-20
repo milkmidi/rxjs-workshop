@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>debounce</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <link rel="stylesheet" href="../css/style.scss" />
+  </head>
+  <body>
+    <div class="app space-y-4">
+      <section data-name="http">
+        <div>
+          <input id="input" class="my-input" type="text" />
+          <div id="loading" hidden>LOADING</div>
+          <div id="result"></div>
+        </div>
+      </section>
+      <section data-name="fetch">
+        <button id="fromFetchBtn" class="button">fromFetch</button>
+        <button id="fromFetchRetryBtn" class="button bg-red">fromFetchRetry</button>
+      </section>
+      <section data-name="axios">
+        <button id="fromAxiosBtn" class="button">fromAxios</button>
+        <button id="fromAxiosRetryBtn" class="button bg-red">fromAxiosRetry</button>
+      </section>
+    </div>
+    <script type="module" src="./fromFetch-fromAxios.ts"></script>
+  </body>
+</html>

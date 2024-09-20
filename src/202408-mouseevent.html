@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+    <link rel="stylesheet" href="/css/app.scss" />
+    <link rel="stylesheet" href="/css/style.scss" />
+    <style>
+      .box {
+        width: 500px;
+        height: 250px;
+        background-color: red;
+        position: relative;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent" style="width:110vw;">
+      <div class="box"></div>
+    </div>
+    <div class="app">
+      <div class="my-code">
+        <pre>
+offset 是相對於該 DOM 的座標
+x, client 是相對於視窗的座標，會受 scroll 影響
+page 是絕對於 html 的座標，不受 scroll 影響( clientX + window.scrollLeft )
+screen 是相對於整個螢幕的座標(應該不會用到)
+        </pre>
+        <pre id="info"></pre>
+      </div>
+      <img src="https://web-assets.positivegrid.com/bigcommerce/f2e/mouse-event.png" alt="" />
+    </div>
+
+    <script type="module">
+      // https://blog.csdn.net/qq_38987146/article/details/125292124
+      const box = document.querySelector('.box');
+      box.addEventListener('mousemove', (e) => {
+        const {
+          clientX, 
+          pageX, 
+          screenX,
+          x,
+          offsetX
+        } = e;
+        const info = {
+          // x,
+          offsetX,
+          clientX,
+          pageX,
+          pageXTest: clientX + window.scrollX,
+          screenX,
+        };
+        document.getElementById('info').textContent = JSON.stringify(info, null, 2);
+      });
+    </script>
+  </body>
+</html>

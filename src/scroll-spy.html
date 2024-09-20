@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: 100px;
+        scroll-margin-top: 100px;
+        &:nth-child(1) {
+          background-color: #1abc9c;
+        }
+        &:nth-child(2) {
+          background-color: #2ecc71;
+        }
+        &:nth-child(3) {
+          background-color: #3498db;
+        }
+        &:nth-child(4) {
+          background-color: #f1c40f;
+        }
+        &:nth-child(5) {
+          background-color: #34495e;
+        }
+      }
+      .side-container__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        width: 1px;
+        height: 44px;
+        --position-index: 0;
+        transform: translateY(calc(var(--position-index) * 44px));
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav {
+        display: flex;
+        position: sticky;
+        top: 100px;
+        flex-direction: column;
+        border-left: 1px solid #e3e3e3;
+        color: #777;
+        a {
+          cursor: pointer;
+          padding: 10px;
+          &.active {
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://developer.apple.com/support/dma-and-apps-in-the-eu/ -->
+    <header class="sticky top-0 h-[100px] bg-gray-300 text-5xl">HEADER</header>
+    <div class="container mx-auto px-5">
+      <h1 class="my-10 text-center text-5xl">Update on apps distributed in the European Union</h1>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="side-container">
+          <nav>
+            <div class="side-container__line"></div>
+            <a href="#a1">Nav1</a>
+            <a href="#a2">Nav2</a>
+            <a href="#a3">Nav3</a>
+            <a href="#a4">Nav4</a>
+            <a href="#a5">Nav5</a>
+          </nav>
+        </div>
+        <div class="col-span-2">
+          <section id="a1" class="w-full" data-index="0">section:1</section>
+          <section id="a2" class="w-full" data-index="1">section:2</section>
+          <section id="a3" class="w-full" data-index="2">section:3</section>
+          <section id="a4" class="w-full" data-index="3">section:4</section>
+          <section id="a5" class="w-full" data-index="4">section:5</section>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./scroll-spy.ts"></script>
+  </body>
+</html>

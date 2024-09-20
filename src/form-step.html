@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <link rel="stylesheet" href="../css/style.scss" />
+    <style>
+      dialog::backdrop {
+        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <button id="step1-cta" class="btn btn-primary">Submit</button>
+    </div>
+
+    <dialog id="step2-dialog" class="rounded-lg border p-4">
+      <form method="dialog">
+        <div>
+          <input
+            id="step2-input"
+            class="my-input"
+            name="name" />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary" >Okay</button>
+        <button
+          id="step2-cta--cancel"
+          type="button"
+          class="btn btn-outline btn-ghost" >Cancel</button>
+      </form>
+    </dialog>
+
+    <script type="module" src="./form-step.ts"></script>
+  </body>
+</html>

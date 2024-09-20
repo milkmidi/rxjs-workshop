@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/app.scss" />
+    <style>
+      body {
+        overflow: hidden;
+      }
+      .box {
+        position: absolute;
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transition: opacity 0.5s ease-in-out;
+        will-change: transform, opacity;
+        border-radius: 10%;
+        width: 40px;
+        height: 80px;
+      }
+      .box[data-active='true'] {
+        opacity: 1;
+      }
+      .box--1 {
+        z-index: 10;
+        background-color: #1abc9c;
+      }
+      .box--2 {
+        z-index: 9;
+        background-color: #2ecc71;
+      }
+      .box--3 {
+        z-index: 8;
+        background-color: #3498db;
+      }
+      .box--4 {
+        z-index: 7;
+        background-color: #9b59b6;
+      }
+      .box--5 {
+        z-index: 6;
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://codepen.io/milkmidi/pen/EpNLQj -->
+    <div class="box box--1"></div>
+    <div class="box box--2"></div>
+    <div class="box box--3"></div>
+    <div class="box box--4"></div>
+    <div class="box box--5"></div>
+
+    <script type="module" src="./smooth-move.ts"></script>
+  </body>
+</html>

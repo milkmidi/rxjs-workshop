@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <link rel="stylesheet" href="../css/style.scss" />
+    <style>
+      #weight-text::after {
+        content: 'kg';
+        display: inline-block;
+        font-size: 12px;
+      }
+      #height-text::after {
+        content: 'cm';
+        display: inline-block;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app space-y-4 py-4">
+      <div class="flex space-x-4">
+        <label>Weight</label>
+        <div id="weight-text" class="flex-none"></div>
+        <input id="weight-slider" type="range" class="my-range" min="40" max="120" step="1" value="75" />
+      </div>
+      <div class="flex space-x-4">
+        <label>Height</label>
+        <div id="height-text" class="flex-none"></div>
+        <input id="height-slider" type="range" class="my-range" min="140" max="210" value="180" />
+      </div>
+      <div>
+        <span>BMI is</span>
+        <span id="bmi-result"></span>
+      </div>
+    </div>
+    <script type="module" src="./BMI-combineLatest.ts"></script>
+  </body>
+</html>

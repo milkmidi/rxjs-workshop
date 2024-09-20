@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="../css/app.scss">
+  <link rel="stylesheet" href="../css/style.scss">
+  <style>
+  #mark {
+    width: 100%;
+    position: fixed; 
+    bottom: 30%;
+    font-size: 16pt;
+    border-bottom: dashed 2px currentColor;
+    text-shadow: 0 0 10px black;
+    z-index: 99;
+  }
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #666;
+    opacity: 0.5;
+    font-size: 20px;
+    color: white;
+  }
+  .box[data-intersecting="true"] {
+    background-color: #27ae60;
+    opacity: 1;
+  }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div style="height:2000px;"></div>
+    <in-view-img
+      src="https://fakeimg.pl/250x100/ff0000/"
+      class="block border-2 border-black p-5 rounded-xl">
+    </in-view-img>
+    <div class="h-screen"></div>
+  </div>
+
+  <script type="module" src="./IntersectionObserver.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS</title>
+    <link type="text/css" rel="stylesheet" href="../css/app.scss" />
+    <link type="text/css" rel="stylesheet" href="../css/style.scss" />
+    <style>
+      .video-wrap {
+        /* position: static; 用 static 的特性，來讓 draggable left, top 失效 */
+        &[data-active="true"]{
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 300px;
+          aspect-ratio: 16/9;
+          cursor: move;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div style="height:200px;"></div>
+      <div class="aspect-video bg-red-200 relative">
+        <div id="dummy-video" class="absolute inset-0 pointer-events-none z-0"></div>
+        <div id="video-wrap" class="video-wrap group">
+          <video
+            class="w-full"
+            autoplay
+            loop
+            playsinline
+            muted
+            src="https://rawgit.com/bower-media-samples/big-buck-bunny-480p-30s/master/video.mp4"
+          ></video>
+          <button
+            class="video-wrap__back-btn absolute top-0 right-0 rounded px-1 hidden group-data-active:block bg-white">Back</button>
+        </div>
+      </div>
+    </div>
+    <div style="height:120vh;"></div>
+    <script type="module" src="./202409-video-position.ts"></script>
+  </body>
+</html>

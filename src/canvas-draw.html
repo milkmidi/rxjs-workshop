@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.scss" />
+    <link rel="stylesheet" href="../css/style.scss" />
+    <style>
+      body {
+        min-height: 100vh;
+        background: #d3d3d3;
+        background: linear-gradient(135deg, #cccccc 0%, #e1e1e1 51%, #d4d4d4 100%);
+      }
+      canvas {
+        background: rgb(17,17,17);
+        background: linear-gradient(124deg, rgba(17,17,17,1) 0%, rgba(85,85,85,1) 100%);
+      }
+      #canvas2 {
+        background-image: url('/img/uv-512.jpg');
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto">
+      <div class="flex space-x-2 justify-center">
+        <div>
+          <canvas id="canvas" width="500" height="500"></canvas>
+          <div id="percent"></div>
+        </div>
+        <div>
+          <canvas id="canvas2" width="500" height="500"></canvas>
+          <div id="percent2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- fork http://perfectionkills.com/exploring-canvas-drawing-techniques/ -->
+    <script type="module" src="./canvas-draw.ts"></script>
+    <script type="module" src="./canvas-draw.brush.ts"></script>
+  </body>
+</html>

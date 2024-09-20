@@ -1,0 +1,59 @@
+pg-knob {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 250px;;
+  overflow: hidden;
+  * {
+    user-select: none;
+    pointer-events: none;
+  }
+  .knob {
+    position: relative;
+    // border: 1px solid black;
+    // border-radius: 50%;
+    // width: 200px;
+    // height: 200px;
+  }
+  svg {
+    fill: none;
+    stroke-width: 4;
+    stroke: #1abc9c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .knob__dot {
+    position: absolute;
+    background-color: #e74c3c;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    left: 50%;
+    bottom: 5px;
+    border-radius: 50%;
+    display: none;
+  }
+  /* .knob__line {
+    position: absolute;
+    background-color: #2980b9;
+    width: 10px;
+    height: 30px;
+    left: 50%;
+    top: 85%;
+    margin-left: -5px;
+  } */
+  .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0px 5px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    background-color:white;
+    border-radius: 8px;
+  }
+}
