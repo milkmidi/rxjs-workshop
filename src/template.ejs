@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RxJS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: #f2f2f2;
+    }
+    .app {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .item-wrap {
+      display: flex;
+      .item {
+        text-decoration: none;
+        flex:1;
+        font-size: 1.5rem;
+        border: 2px solid #ddd;
+        border-right-width: 0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: #333;
+        display: flex;
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+      .launch-code {
+        width: 50px;
+        display: block;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      > * + * {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!--
+This is automatically generated, please do not modify.
+██████╗  ██████╗     ███╗   ██╗ ██████╗ ████████╗    ███╗   ███╗ ██████╗ ██████╗ ██╗███████╗██╗   ██╗
+██╔══██╗██╔═══██╗    ████╗  ██║██╔═══██╗╚══██╔══╝    ████╗ ████║██╔═══██╗██╔══██╗██║██╔════╝╚██╗ ██╔╝
+██║  ██║██║   ██║    ██╔██╗ ██║██║   ██║   ██║       ██╔████╔██║██║   ██║██║  ██║██║█████╗   ╚████╔╝ 
+██║  ██║██║   ██║    ██║╚██╗██║██║   ██║   ██║       ██║╚██╔╝██║██║   ██║██║  ██║██║██╔══╝    ╚██╔╝  
+██████╔╝╚██████╔╝    ██║ ╚████║╚██████╔╝   ██║       ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║██║        ██║   
+╚═════╝  ╚═════╝     ╚═╝  ╚═══╝ ╚═════╝    ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝   
+-->                                                                                                     
+  <div class="app">
+    <div class="card">
+    <% for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+    %>
+      <div class="item-wrap">    
+        <a class="item" href="<%= input %>"><%= input %></a>
+        <button class="launch-code" data-file="./src/<%= input %>">🚀</button>
+      </div>
+    <% } %>
+  </div>
+  <script type="module">
+    document.querySelectorAll('.launch-code').forEach((button) => {
+      button.addEventListener('click', async (event) => {
+        const { file } = event.target.dataset;
+        fetch('/__open-in-editor?file=' + file);
+      });
+    });
+  </script>
+</body>
+</html>
