@@ -9,9 +9,9 @@ const createApp = () => {
   return app;
 };
 
-export default function expressPlugin() {
+export default function LaunchEditorPlugin() {
   return {
-    name: 'vite-launch-code-middleware-plugin',
+    name: 'launch-editor-plugin',
     configureServer(server) {
       server.middlewares.use(createApp());
     },

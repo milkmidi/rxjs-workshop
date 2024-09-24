@@ -1,16 +1,16 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
-import glob from 'glob';
+// import glob from 'glob';
 import path from 'path';
 import { defineConfig } from 'vite';
-import launchEditorMiddlewarePlugin from './internals/vite-launch-code-middleware';
 import IndexGeneratePlugin from './internals/vite-plugins/index-generate';
+import launchEditorPlugin from './internals/vite-plugins/launch-editor';
 
-const input = glob.sync(`./src/*.html`).reduce((acc, p) => {
+/* const input = glob.sync(`./src/*.html`).reduce((acc, p) => {
   const entry = p.slice(p.lastIndexOf('/') + 1, p.length).replace('.html', '');
   acc[`${entry}`] = p;
   return acc;
-}, {});
+}, {}); */
 
 export default defineConfig(({ mode }) => {
   const DEV_MODE = mode === 'development';
@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
         },
       }),
       ...(DEV_MODE
-        ? [launchEditorMiddlewarePlugin()]
+        ? [launchEditorPlugin()]
         : [
             IndexGeneratePlugin({
               template: './src/template.ejs',

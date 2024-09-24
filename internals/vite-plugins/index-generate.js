@@ -1,12 +1,11 @@
 import ejs from 'ejs';
 import { promises as fs } from 'fs';
-// import path from 'path';
 import glob from 'glob';
 
 export default function IndexGeneratePlugin(options) {
   const { template } = options;
   return {
-    name: 'index-generate-plugin',
+    name: 'index-generate',
     apply: 'build',
     async writeBundle() {
       const inputs = glob.sync(`./src/*.html`).map((fileName) => {
