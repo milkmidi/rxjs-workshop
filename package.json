@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite --host",
-    "build": "npm run generate && vite build",
+    "build": "vite build",
     "test": "vitest run"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "autoprefixer": "^10.4.20",
     "babel-plugin-react-compiler": "^0.0.0-experimental-6067d4e-20240919",
     "daisyui": "^4.12.10",
+    "ejs": "^3.1.10",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
@@ -39,6 +40,10 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-perfectionist": "^3.6.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "express": "^4.21.0",
+    "glob": "^7.2.0",
+    "launch-editor": "^2.9.1",
+    "launch-editor-middleware": "^2.9.1",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",

@@ -3,9 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>RxJS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: #f2f2f2;
+    }
+    .app {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .item-wrap {
+      display: flex;
+      .item {
+        text-decoration: none;
+        flex:1;
+        font-size: 1.5rem;
+        border: 2px solid #ddd;
+        border-right-width: 0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: #333;
+        display: flex;
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+      .launch-code {
+        width: 50px;
+        display: block;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      > * + * {
+        margin-top: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>123</h1>
+<!--
+This is automatically generated, please do not modify.
+██████╗  ██████╗     ███╗   ██╗ ██████╗ ████████╗    ███╗   ███╗ ██████╗ ██████╗ ██╗███████╗██╗   ██╗
+██╔══██╗██╔═══██╗    ████╗  ██║██╔═══██╗╚══██╔══╝    ████╗ ████║██╔═══██╗██╔══██╗██║██╔════╝╚██╗ ██╔╝
+██║  ██║██║   ██║    ██╔██╗ ██║██║   ██║   ██║       ██╔████╔██║██║   ██║██║  ██║██║█████╗   ╚████╔╝ 
+██║  ██║██║   ██║    ██║╚██╗██║██║   ██║   ██║       ██║╚██╔╝██║██║   ██║██║  ██║██║██╔══╝    ╚██╔╝  
+██████╔╝╚██████╔╝    ██║ ╚████║╚██████╔╝   ██║       ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║██║        ██║   
+╚═════╝  ╚═════╝     ╚═╝  ╚═══╝ ╚═════╝    ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝   
+-->                                                                                                     
+  <div class="app">
+    <div class="card">
+    
+      <div class="item-wrap">    
+        <a class="item" href="00-overview.html">00-overview.html</a>
+        <button class="launch-code" data-file="./src/00-overview.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="01-Observable-subject.html">01-Observable-subject.html</a>
+        <button class="launch-code" data-file="./src/01-Observable-subject.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="02-cold-hot-observable.html">02-cold-hot-observable.html</a>
+        <button class="launch-code" data-file="./src/02-cold-hot-observable.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="02-of-from-range.html">02-of-from-range.html</a>
+        <button class="launch-code" data-file="./src/02-of-from-range.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="03-fromEvent.html">03-fromEvent.html</a>
+        <button class="launch-code" data-file="./src/03-fromEvent.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="04-switchMap-concatMap-mergeMap.html">04-switchMap-concatMap-mergeMap.html</a>
+        <button class="launch-code" data-file="./src/04-switchMap-concatMap-mergeMap.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="05-buffer-window.html">05-buffer-window.html</a>
+        <button class="launch-code" data-file="./src/05-buffer-window.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="06-distinct.html">06-distinct.html</a>
+        <button class="launch-code" data-file="./src/06-distinct.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="07-share.html">07-share.html</a>
+        <button class="launch-code" data-file="./src/07-share.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="08-combineLatest.html">08-combineLatest.html</a>
+        <button class="launch-code" data-file="./src/08-combineLatest.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="09-scan.html">09-scan.html</a>
+        <button class="launch-code" data-file="./src/09-scan.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="10-iif.html">10-iif.html</a>
+        <button class="launch-code" data-file="./src/10-iif.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="11-defer.html">11-defer.html</a>
+        <button class="launch-code" data-file="./src/11-defer.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="12-sample.html">12-sample.html</a>
+        <button class="launch-code" data-file="./src/12-sample.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="13-forkJoin.html">13-forkJoin.html</a>
+        <button class="launch-code" data-file="./src/13-forkJoin.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="14-error.html">14-error.html</a>
+        <button class="launch-code" data-file="./src/14-error.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="15-repeat.html">15-repeat.html</a>
+        <button class="launch-code" data-file="./src/15-repeat.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="17-partition.html">17-partition.html</a>
+        <button class="launch-code" data-file="./src/17-partition.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="18-take-skip-single.html">18-take-skip-single.html</a>
+        <button class="launch-code" data-file="./src/18-take-skip-single.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="19-groupBy.html">19-groupBy.html</a>
+        <button class="launch-code" data-file="./src/19-groupBy.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="20-custom-operator.html">20-custom-operator.html</a>
+        <button class="launch-code" data-file="./src/20-custom-operator.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="202408-mouseevent.html">202408-mouseevent.html</a>
+        <button class="launch-code" data-file="./src/202408-mouseevent.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="202409-react.html">202409-react.html</a>
+        <button class="launch-code" data-file="./src/202409-react.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="202409-video-position.html">202409-video-position.html</a>
+        <button class="launch-code" data-file="./src/202409-video-position.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="21-scheduler.html">21-scheduler.html</a>
+        <button class="launch-code" data-file="./src/21-scheduler.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="22-unsubscribe.html">22-unsubscribe.html</a>
+        <button class="launch-code" data-file="./src/22-unsubscribe.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="23-connect.html">23-connect.html</a>
+        <button class="launch-code" data-file="./src/23-connect.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="99-all.html">99-all.html</a>
+        <button class="launch-code" data-file="./src/99-all.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="BMI-combineLatest.html">BMI-combineLatest.html</a>
+        <button class="launch-code" data-file="./src/BMI-combineLatest.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="cache.html">cache.html</a>
+        <button class="launch-code" data-file="./src/cache.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="canvas-draw.html">canvas-draw.html</a>
+        <button class="launch-code" data-file="./src/canvas-draw.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="click-outside.html">click-outside.html</a>
+        <button class="launch-code" data-file="./src/click-outside.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="countdown.html">countdown.html</a>
+        <button class="launch-code" data-file="./src/countdown.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="debounce-throttle.html">debounce-throttle.html</a>
+        <button class="launch-code" data-file="./src/debounce-throttle.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="DecryptionEffect.html">DecryptionEffect.html</a>
+        <button class="launch-code" data-file="./src/DecryptionEffect.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="drag-and-drop-vanilla.html">drag-and-drop-vanilla.html</a>
+        <button class="launch-code" data-file="./src/drag-and-drop-vanilla.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="drag-and-drop.html">drag-and-drop.html</a>
+        <button class="launch-code" data-file="./src/drag-and-drop.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="form-step.html">form-step.html</a>
+        <button class="launch-code" data-file="./src/form-step.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="fromFetch-fromAxios.html">fromFetch-fromAxios.html</a>
+        <button class="launch-code" data-file="./src/fromFetch-fromAxios.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="hash-change.html">hash-change.html</a>
+        <button class="launch-code" data-file="./src/hash-change.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="horizontal-scroll-indicator.html">horizontal-scroll-indicator.html</a>
+        <button class="launch-code" data-file="./src/horizontal-scroll-indicator.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="index.html">index.html</a>
+        <button class="launch-code" data-file="./src/index.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="IntersectionObserver.html">IntersectionObserver.html</a>
+        <button class="launch-code" data-file="./src/IntersectionObserver.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="knob.html">knob.html</a>
+        <button class="launch-code" data-file="./src/knob.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="konami.html">konami.html</a>
+        <button class="launch-code" data-file="./src/konami.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="mutation-observer.html">mutation-observer.html</a>
+        <button class="launch-code" data-file="./src/mutation-observer.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="scroll-spy.html">scroll-spy.html</a>
+        <button class="launch-code" data-file="./src/scroll-spy.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="smooth-move.html">smooth-move.html</a>
+        <button class="launch-code" data-file="./src/smooth-move.html">🚀</button>
+      </div>
+    
+      <div class="item-wrap">    
+        <a class="item" href="undo.html">undo.html</a>
+        <button class="launch-code" data-file="./src/undo.html">🚀</button>
+      </div>
+    
+  </div>
+  <script type="module">
+    document.querySelectorAll('.launch-code').forEach((button) => {
+      button.addEventListener('click', async (event) => {
+        const { file } = event.target.dataset;
+        fetch('/__open-in-editor?file=' + file);
+      });
+    });
+  </script>
 </body>
 </html>
